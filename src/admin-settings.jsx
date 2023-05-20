@@ -11,10 +11,9 @@ const root = ReactDOM.createRoot( document.getElementById( 'cptint_root' ) );
   - Here in this example, we have grouped our columns into two headers. react-table is flexible enough to create grouped table headers
 */
 
-
 // Render
 root.render(
     <StateProvider reducer={reducer} initialState={initialState}>
-        <App />
+        <App/>
     </StateProvider>
 );

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "watch": "npm run build & npm run dev",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -20,6 +21,7 @@
     "toastr": "^2.1.4"
   },
   "devDependencies": {
+    "chokidar": "^3.5.3",
     "vite": "^4.0.0"
   }
 }

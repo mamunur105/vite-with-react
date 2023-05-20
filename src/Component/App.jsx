@@ -72,7 +72,7 @@ function App() {
                     <MainHeader/>
                 </Sider>
                 <Layout className="layout" style={{ padding: '10px', overflowY: 'auto' }} >
-                   { 'settings' === stateValue.generalData.selectedMenu && <Settings/>  }
+                    { 'settings' === stateValue.generalData.selectedMenu && <Settings/>  }
                 </Layout>
             </Layout>
     );

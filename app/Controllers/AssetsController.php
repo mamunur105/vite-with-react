@@ -68,7 +68,7 @@ class AssetsController
 
         $current_screen =  get_current_screen() ;
 
-        if ( isset( $current_screen->id ) && 'toplevel_page_cptint/admin' === $current_screen->id ){
+        if ( isset( $current_screen->id ) && 'toplevel_page_cptint-admin' === $current_screen->id ){
 
             wp_enqueue_style('cptint-settings');
             wp_enqueue_script('cptint-settings');

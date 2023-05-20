@@ -37,7 +37,7 @@ class AdminMenu {
 			'WC Init',
 			'WC Init',
 			'manage_options',
-			'cptint/admin.php',
+			'cptint-admin',
 			[$this, 'wp_media_page_callback'],
 			'dashicons-tickets',
 			6

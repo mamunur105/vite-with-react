@@ -16,8 +16,7 @@ import * as Types from "../Utils/actionType";
 
 function Settings() {
 
-   const [stateValue, dispatch] = useStateValue();
-
+    const [stateValue, dispatch] = useStateValue();
 
     return (
         <Layout style={{ position: 'relative' }}>
@@ -45,10 +44,8 @@ function Settings() {
                         borderRadius: '5px',
                         boxShadow: 'rgb(0 0 0 / 1%) 0px 0 20px',
                     }}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        At atque commodi, cupiditate doloremque ducimus harum inventore iusto
-                        maxime nemo odio officia officiis porro provident
-                        quia quibusdam repellendus rerum veniam voluptas.
+                        antdesign settings.
+                         Added text
                     </Content>
                 }
 
