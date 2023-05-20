@@ -14,7 +14,7 @@ export default defineConfig(() => ({
 		manifest: true,
 		outDir: `./assets`,
 		rollupOptions: {
-			input: `./src/admin-settings.js`,
+			input: `./src/admin-settings.jsx`,
 			output: {
 				entryFileNames: `js/backend/admin-settings.js`
 			}

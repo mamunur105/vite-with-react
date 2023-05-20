@@ -5,7 +5,7 @@
 import Axios from 'axios';
 import { notification } from 'antd';
 
-const apibaseUrl = `${cptintParams.restApiUrl}TinySolutions/mlt/v1/media`;
+const apibaseUrl = `${cptintParams.restApiUrl}TinySolutions/cptint/v1/cptint`;
 
 /*
  * Create a Api object with Axios and

@@ -11,6 +11,9 @@ const { Sider } = Layout;
 
 import * as Types from "../Utils/actionType";
 
+import Settings from "./Settings";
+
+import MainHeader from "./MainHeader";
 
 import { useStateValue } from "../Utils/StateProvider";
 
@@ -66,10 +69,10 @@ function App() {
                 height: 'calc( 100vh - 110px )',
             }}>
                 <Sider style={{ borderRadius: '5px' }}>
-                    Hello
+                    <MainHeader/>
                 </Sider>
                 <Layout className="layout" style={{ padding: '10px', overflowY: 'auto' }} >
-                        sefttings
+                   { 'settings' === stateValue.generalData.selectedMenu && <Settings/>  }
                 </Layout>
             </Layout>
     );

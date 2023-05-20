@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './Component/App';
+import { StateProvider } from './Utils/StateProvider';
+import reducer, { initialState } from './Utils/reducer';
 
 const root = ReactDOM.createRoot( document.getElementById( 'cptint_root' ) );
 
@@ -10,4 +13,8 @@ const root = ReactDOM.createRoot( document.getElementById( 'cptint_root' ) );
 
 
 // Render
-root.render( `Hello` );
+root.render(
+    <StateProvider reducer={reducer} initialState={initialState}>
+        <App />
+    </StateProvider>
+);

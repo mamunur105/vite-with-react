@@ -1,7 +1,7 @@
 {
-  "src/admin-settings.js": {
+  "src/admin-settings.jsx": {
     "file": "js/backend/admin-settings.js",
     "isEntry": true,
-    "src": "src/admin-settings.js"
+    "src": "src/admin-settings.jsx"
   }
 }
