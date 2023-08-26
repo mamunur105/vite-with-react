@@ -27,19 +27,24 @@ class FilterHooks {
 	}
 
 	/**
-	 * @param array $links default plugin action link
+	 * Plugin Settings Link in the Action Area.
+	 *
+	 * @param array $links default plugin action link.
 	 *
 	 * @return array [array] plugin action link
 	 */
 	public static function plugins_setting_links( $links ) {
 		$links['mediaedit_settings'] = '<a href="' . admin_url( 'upload.php?page=cptint-settings' ) . '">' . esc_html__( 'Start Editing', 'cptint' ) . '</a>';
+
 		/*
 		* TODO:: Next Version
 		*
 		*/
+        // phpcs:disable
 		if ( ! Fns::is_plugins_installed( 'media-library-tools-pro/media-library-tools-pro.php' ) ) {
 			// $links['cptint_pro'] = sprintf( '<a href="#" target="_blank" style="color: #39b54a; font-weight: bold;">' . esc_html__( 'Go Pro', 'wp-media' ) . '</a>' );
 		}
+        // phpcs:enable
 		return $links;
 	}
 
