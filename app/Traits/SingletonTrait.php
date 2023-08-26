@@ -1,6 +1,8 @@
 <?php
 /**
+ * Singleton Trait File
  *
+ * @package TinySolutions\WM
  */
 
 namespace TinySolutions\cptint\Traits;
@@ -10,7 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
+/**
+ * Singleton trait
+ */
 trait SingletonTrait {
+
 	/**
 	 * The single instance of the class.
 	 *
@@ -19,6 +25,8 @@ trait SingletonTrait {
 	protected static $instance = null;
 
 	/**
+	 * Instantiate the Trait
+	 *
 	 * @return self
 	 */
 	final public static function instance() {
@@ -36,7 +44,9 @@ trait SingletonTrait {
 	final public function __clone() {
 	}
 
-	// Prevent serialization of the instance
+	/**
+	 * Prevent serialization of the instance.
+	 */
 	public function __sleep() {
 		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'cptint' ), '1.0' );
 		die();
