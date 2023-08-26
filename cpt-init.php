@@ -2,6 +2,7 @@
 /**
  * @wordpress-plugin
  * Plugin Name:       Cpt int
+ * Description:       A Starter WordPress Plugin with React and Vite
  * Plugin URI:        https://wordpress.org/support/plugin/media-library-tools
  * Description:       Cpt int
  * Version:           0.0.1
@@ -24,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'CPTWI_VERSION', '0.0.1' );
 define( 'CPTWI_FILE', __FILE__ );
 define( 'CPTWI_BASENAME', plugin_basename( CPTWI_FILE ) );
-define( 'CPTWI_URL', plugins_url('', CPTWI_FILE ));
-define( 'CPTWI_ABSPATH', dirname(CPTWI_FILE ) );
+define( 'CPTWI_URL', plugins_url( '', CPTWI_FILE ) );
+define( 'CPTWI_ABSPATH', dirname( CPTWI_FILE ) );
 
 /**
  * App Init.

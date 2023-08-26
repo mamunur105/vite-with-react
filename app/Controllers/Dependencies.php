@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Dependencies File
+ *
+ * @package TinySolutions\WM
+ */
 namespace TinySolutions\cptint\Controllers;
 
 use TinySolutions\cptint\Traits\SingletonTrait;
@@ -14,14 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 class Dependencies {
-    /**
-     * Singleton
-     */
-    use SingletonTrait;
+
+	/**
+	 * Singleton
+	 */
+	use SingletonTrait;
 
 	const MINIMUM_PHP_VERSION = '7.4';
 
-	private $missing = [];
+	private $missing = array();
 	/**
 	 * @var bool
 	 */
@@ -33,7 +38,7 @@ class Dependencies {
 	public function check() {
 
 		if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
-			add_action( 'admin_notices', [ $this, 'minimum_php_version' ] );
+			add_action( 'admin_notices', array( $this, 'minimum_php_version' ) );
 			$this->allOk = false;
 		}
 
@@ -41,7 +46,7 @@ class Dependencies {
 			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 		if ( ! function_exists( 'wp_create_nonce' ) ) {
-			require_once ABSPATH . 'wp-includes/pluggable.php';
+			include_once ABSPATH . 'wp-includes/pluggable.php';
 		}
 
 		return $this->allOk;

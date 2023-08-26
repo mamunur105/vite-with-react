@@ -33,20 +33,20 @@ if ( ! class_exists( Cptint::class ) ) {
 		 *
 		 * @var string
 		 */
-		public $nonceId = 'cptint_wpnonce';
+		public $nonce_id = 'cptint_wpnonce';
 
 		/**
 		 * Post Type.
 		 *
 		 * @var string
 		 */
-//		public $current_theme;
-        /**
-         * Post Type.
-         *
-         * @var string
-         */
-        public $category = 'cptint_category';
+		// public $current_theme;.
+		/**
+		 * Post Type.
+		 *
+		 * @var string
+		 */
+		public $category = 'cptint_category';
 		/**
 		 * Singleton
 		 */
@@ -59,14 +59,14 @@ if ( ! class_exists( Cptint::class ) ) {
 
 			// $this->current_theme = wp_get_theme()->get( 'TextDomain' );
 
-			add_action( 'init', [ $this, 'language' ] );
-			add_action( 'plugins_loaded', [ $this, 'init' ], 100 );
+			add_action( 'init', array( $this, 'language' ) );
+			add_action( 'plugins_loaded', array( $this, 'init' ), 100 );
 			// Register Plugin Active Hook.
-			register_activation_hook( CPTWI_FILE, [ Installation::class, 'activate' ] );
+			register_activation_hook( CPTWI_FILE, array( Installation::class, 'activate' ) );
 			// Register Plugin Deactivate Hook.
-			register_deactivation_hook( CPTWI_FILE, [ Installation::class, 'deactivation' ] );
+			register_deactivation_hook( CPTWI_FILE, array( Installation::class, 'deactivation' ) );
 
-        }
+		}
 
 		/**
 		 * Assets url generate with given assets file
@@ -117,13 +117,13 @@ if ( ! class_exists( Cptint::class ) ) {
 
 			do_action( 'cptint/before_loaded' );
 
-            Review::instance();
+			Review::instance();
 			// Include File.
-            AssetsController::instance();
-            AdminMenu::instance();
-            FilterHooks::init_hooks();
+			AssetsController::instance();
+			AdminMenu::instance();
+			FilterHooks::init_hooks();
 			ActionHooks::init_hooks();
-            Api::instance();
+			Api::instance();
 
 			do_action( 'cptint/after_loaded' );
 		}
@@ -148,6 +148,8 @@ if ( ! class_exists( Cptint::class ) ) {
 	}
 
 	/**
+	 * Instantiate the Class
+	 *
 	 * @return Cptint
 	 */
 	function cptint() {

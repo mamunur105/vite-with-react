@@ -18,7 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Fns {
 
 	/**
-	 * @param $plugin_file_path
+	 * Check plugin activation
+	 *
+	 * @param $plugin_file_path plugin path.
 	 *
 	 * @return bool
 	 */
@@ -30,12 +32,12 @@ class Fns {
 
 
 	/**
+	 * Retrieve the options from database
+	 *
 	 * @return false|string
 	 */
 	public static function get_options() {
-		$defaults = array(
-
-		);
+		$defaults = array();
 		$options  = get_option( 'cptint_settings' );
 		return wp_parse_args( $options, $defaults );
 	}

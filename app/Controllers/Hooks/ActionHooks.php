@@ -13,6 +13,7 @@ defined( 'ABSPATH' ) || exit();
  * Main ActionHooks class.
  */
 class ActionHooks {
+
 	/**
 	 * Init Hooks.
 	 *
