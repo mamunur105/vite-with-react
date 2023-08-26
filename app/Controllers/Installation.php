@@ -33,6 +33,8 @@ class Installation {
 	}
 
 	/**
+	 * Do stuff after activate the plugin
+	 *
 	 * @return void
 	 */
 	public static function deactivation() {

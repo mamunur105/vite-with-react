@@ -22,6 +22,20 @@ class Api {
 	use SingletonTrait;
 
 	/**
+	 * Namespace for the REST API
+	 *
+	 * @var string
+	 */
+	private $namespace;
+
+	/**
+	 * Resource name for the REST API
+	 *
+	 * @var string
+	 */
+	private $resource_name;
+
+	/**
 	 * Construct
 	 */
 	private function __construct() {
@@ -68,7 +82,7 @@ class Api {
 	/**
 	 * Update options
 	 *
-	 * @param object $request_data.
+	 * @param object $request_data obtain all object.
 	 *
 	 * @return false|string
 	 */

@@ -18,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Fns {
 
 	/**
-	 * Check plugin activation
+	 * Check if a plugin is installed.
 	 *
-	 * @param $plugin_file_path plugin path.
+	 * @param string $plugin_file_path Plugin path.
 	 *
 	 * @return bool
 	 */
@@ -29,6 +29,7 @@ class Fns {
 
 		return isset( $installed_plugins_list[ $plugin_file_path ] );
 	}
+
 
 
 	/**

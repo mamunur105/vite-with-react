@@ -4,6 +4,7 @@
  *
  * @package TinySolutions\WM
  */
+
 namespace TinySolutions\cptint\Controllers;
 
 use TinySolutions\cptint\Traits\SingletonTrait;
@@ -16,7 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Dependencies
  */
-
 class Dependencies {
 
 	/**
@@ -26,20 +26,30 @@ class Dependencies {
 
 	const MINIMUM_PHP_VERSION = '7.4';
 
-	private $missing = array();
 	/**
-	 * @var bool
+	 * Resource name for the REST API
+	 *
+	 * @var array
 	 */
-	private $allOk = true;
+	private $missing = array();
 
 	/**
+	 * All OK Flag
+	 *
+	 * @var bool
+	 */
+	private $all_ok = true;
+
+	/**
+	 * Check PHP Version
+	 *
 	 * @return bool
 	 */
 	public function check() {
 
 		if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
 			add_action( 'admin_notices', array( $this, 'minimum_php_version' ) );
-			$this->allOk = false;
+			$this->all_ok = false;
 		}
 
 		if ( ! function_exists( 'is_plugin_active' ) ) {
@@ -49,7 +59,7 @@ class Dependencies {
 			include_once ABSPATH . 'wp-includes/pluggable.php';
 		}
 
-		return $this->allOk;
+		return $this->all_ok;
 	}
 
 	/**
@@ -66,7 +76,7 @@ class Dependencies {
 			'<strong>' . esc_html__( 'PHP', 'cptint' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
-		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
+		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', wp_kses_post( $message ) );
 	}
 
 

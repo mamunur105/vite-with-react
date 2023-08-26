@@ -25,6 +25,8 @@ trait SingletonTrait {
 	protected static $instance = null;
 
 	/**
+	 * Instantiate the Trait
+	 *
 	 * @return self
 	 */
 	final public static function instance() {
